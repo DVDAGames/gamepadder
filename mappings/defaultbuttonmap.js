@@ -1,5 +1,5 @@
 //button and stick mapping for a default controller
-class DS3ButtonMap {
+class DefaultButtonMap {
   constructor() {
     this.buttonMap = [
       'A',
@@ -30,4 +30,4 @@ class DS3ButtonMap {
   }
 };
 
-export default DS3ButtonMap;
+export default DefaultButtonMap;
