@@ -20,6 +20,24 @@ const gamepadUtils = {
     //return Array of gamepads
     return gamepads;
   },
+
+  parseControllerID(id = '') {
+    const regex = /(?:\sVendor:\s)(.*?)(?:\sProduct:\s)(.*?)\)/igm;
+
+    let find;
+
+    if(typeof id === 'string') {
+      find = regex.exec(id);
+    }
+
+    const vendor = find[1];
+    const product = find[2];
+
+    return {
+      vendor,
+      product
+    };
+  }
 };
 
 //make our utils available

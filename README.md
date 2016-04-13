@@ -1,4 +1,4 @@
-#gamepad 0.2.0
+#gamepad 0.3.0
 
 `gamepad` is a basic JavaScript class for dealing with the intricacies of the HTML 5 Gamepad API.
 

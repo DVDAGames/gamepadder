@@ -4,28 +4,25 @@ import DS3ButtonMap from './ds3buttonmap';
 import DefaultButtonMap from './defaultbuttonmap';
 
 //build our type mapping object
-const typeMap = {
-  'Wireless Controller (STANDARD GAMEPAD Vendor: 054c Product: 05c4)': [
-    {
-      buttons: 18,
-      axes: 4,
-      name: 'Dual Shock 4',
-      map: new DS4ButtonMap()
-    }
-  ],
-  'PLAYSTATION(R)3 Controller (STANDARD GAMEPAD Vendor: 054c Product: 0268)': [
-    {
-      buttons: 17,
-      axes: 4,
-      name: 'Dual Shock 3',
-      map: new DS4ButtonMap()
-    }
-  ],
-  'DEFAULT': {
-    name: 'Controller',
+const typeMap = [
+  {
+    vendor: 'any',
+    product: 'any',
+    name: 'Generic Controller',
     map: new DefaultButtonMap()
+  },
+  {
+    vendor: '054c',
+    product: '05c4',
+    name: 'Dual Shock 4',
+    map: new DS4ButtonMap()
+  },
+  {
+    vendor: '054c',
+    product: '0268',
+    name: 'Dual Shock 3',
+    map: new DS3ButtonMap()
   }
-};
+];
 
-//export typemap object
 export default typeMap;
