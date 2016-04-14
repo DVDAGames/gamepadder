@@ -1,8 +1,8 @@
 import typeMap from './mappings/typemap';
-import gamepadUtils from './utils/utils';
+import GamepadUtils from './utils/utils';
 
 //Gamepad Class
-class gamepad {
+class Gamepad {
   //generate a new gamepad object
   constructor({ index, id, buttons, axes, mapping, connected }) {
     //set default parameters for controller
@@ -76,6 +76,6 @@ class gamepad {
 
 //make the gamepad class and its utils available
 export {
-  gamepad,
-  gamepadUtils
+  Gamepad,
+  GamepadUtils
 };

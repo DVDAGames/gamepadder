@@ -1,5 +1,5 @@
 //basic utility methods for gamepad
-const gamepadUtils = {
+const GamepadUtils = {
   //Chrome gives you a GamepadList instead of an Array, let's fix that
   convertGamePadListToArray(gamepadList) {
     //use the Array.prototype.slice.call() trick to convert this Array-like Object into an Array
@@ -41,4 +41,4 @@ const gamepadUtils = {
 };
 
 //make our utils available
-export default gamepadUtils;
+export default GamepadUtils;
