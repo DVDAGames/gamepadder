@@ -9,6 +9,84 @@ It currently has fully supported mappings, button naming, and controller naming 
 
 Future updates will add more controller support and also provide mechanisms for more easily checking for button presses. Currently, you need to call the `gamepad.checkForButtonPress()` method in your game's loop and pass it the `gamepad` object that you want to check for button presses. This will be updated to allow a single `gamepad` method to be used to check every connected gamepad for button presses.
 
+## Using
+
+You can use Gamepad like this:
+
+```js
+import { Gamepad, GamepadUtils } from 'gamepad';
+
+const numberOfPlayers = 1;
+
+class Game {
+  init() {
+    if (!('ongamepadconnected' in window)) {
+      //No gamepad events available, poll instead.
+      this.checkForGamePadsInterval = setInterval(this.pollGamepads.bind(this), 500);
+    }
+
+    this.addListeners();
+  }
+
+  pollGamepads() {
+    const gamepads = GamepadUtils.getGamepads();
+
+    if(gamepads.length) {
+      gamepads.forEach((pad, index) => {
+        game.controllers[index] =  new Gamepad(pad);
+      });
+
+      if(gamepads.length === numberOfPlayers) {
+        clearInterval(game.checkForGamePadsInterval);
+      }
+    }
+  }
+
+  addListeners() {
+    this.controllerConnectedEvent = window.addEventListener('gamepadconnected', (e) => {
+      console.log('gamepad connected');
+
+      const controller = new Gamepad(e.gamepad);
+
+      if(!this.controllers[controller.id]) {
+        this.controllers[controller.id] = {
+          controller,
+          buttonMap
+        };
+      }
+
+      this.controllerDisconnectedEvent = window.addEventListener('gamepaddisconnected', (e) => {
+        console.log('gamepad disconnected');
+        this.controllers.splice(e.gamepad.id, 1);
+      });
+    });
+  }
+
+  tick(event) {
+    const gamepads = this.getGamepads();
+
+    this.controllers.forEach((controller, index) => {
+      let buttonPresses;
+      let previousButtons;
+
+      const buttonPressObject = controller.checkForButtonPress(gamepads[index]);
+
+      buttonPresses = buttonPressObject.buttonPresses;
+      previousButtons = buttonPressObject.previousButtons;
+
+      //logic to respond to button presses here
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const game = new Game();
+
+  game.init();
+})
+
+```
+
 ##Contributing
 
 `gamepad` needs your help!
