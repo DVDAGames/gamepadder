@@ -1,5 +1,5 @@
-import typeMap from './mappings/typemap';
-import GamepadderUtils from './utils/utils';
+const typeMap = require('./mappings/typemap');
+const GamepadderUtils = require('./utils/utils');
 
 //Gamepadder Class
 class Gamepadder {
@@ -75,7 +75,7 @@ class Gamepadder {
 }
 
 //make the gamepadder class and its utils available
-export {
+module.exports = {
   Gamepadder,
   GamepadderUtils
 };

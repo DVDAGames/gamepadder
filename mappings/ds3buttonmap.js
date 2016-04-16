@@ -30,4 +30,4 @@ class DS3ButtonMap {
   }
 };
 
-export default DS3ButtonMap;
+module.exports = DS3ButtonMap;

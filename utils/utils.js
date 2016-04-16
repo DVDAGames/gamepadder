@@ -41,4 +41,4 @@ const GamepadderUtils = {
 };
 
 //make our utils available
-export default GamepadderUtils;
+module.exports = GamepadderUtils;

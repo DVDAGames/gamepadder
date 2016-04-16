@@ -31,4 +31,4 @@ class DS4ButtonMap {
   }
 };
 
-export default DS4ButtonMap;
+module.exports = DS4ButtonMap;

@@ -1,7 +1,7 @@
 //import our button maps
-import DS4ButtonMap from './ds4buttonmap';
-import DS3ButtonMap from './ds3buttonmap';
-import DefaultButtonMap from './defaultbuttonmap';
+const DS4ButtonMap = require('./ds4buttonmap');
+const DS3ButtonMap = require('./ds3buttonmap');
+const DefaultButtonMap = require('./defaultbuttonmap');
 
 //build our type mapping object
 const typeMap = [
@@ -25,4 +25,4 @@ const typeMap = [
   }
 ];
 
-export default typeMap;
+module.exports = typeMap;

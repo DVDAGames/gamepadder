@@ -30,4 +30,4 @@ class DefaultButtonMap {
   }
 };
 
-export default DefaultButtonMap;
+module.exports = DefaultButtonMap;

@@ -1,4 +1,4 @@
-#gamepadder 0.4.0
+#gamepadder 0.5.0
 
 `gamepadder` is a basic JavaScript class for dealing with the intricacies of the HTML 5 Gamepad API.
 
