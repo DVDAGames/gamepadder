@@ -1,6 +1,6 @@
 {
-  "name": "gamepad",
-  "version": "0.3.2",
+  "name": "gamepadder",
+  "version": "0.4.0",
   "description": "JavaScript class for dealing with HTML 5 GamePad API",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DVDAGames/gamepad.git"
+    "url": "git+https://github.com/DVDAGames/gamepadder.git"
   },
   "keywords": [
     "gamepad",
@@ -19,7 +19,7 @@
   "author": "dvdagames",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DVDAGames/gamepad/issues"
+    "url": "https://github.com/DVDAGames/gamepadder/issues"
   },
-  "homepage": "https://github.com/DVDAGames/gamepad#readme"
+  "homepage": "https://github.com/DVDAGames/gamepadder#readme"
 }

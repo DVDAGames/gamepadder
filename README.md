@@ -1,20 +1,20 @@
-#gamepad 0.3.2
+#gamepadder 0.4.0
 
-`gamepad` is a basic JavaScript class for dealing with the intricacies of the HTML 5 Gamepad API.
+`gamepadder` is a basic JavaScript class for dealing with the intricacies of the HTML 5 Gamepad API.
 
 It currently has fully supported mappings, button naming, and controller naming for these controllers:
 
 * Sony Dual Shock 4
 * Sony Dual Shock 3
 
-Future updates will add more controller support and also provide mechanisms for more easily checking for button presses. Currently, you need to call the `gamepad.checkForButtonPress()` method in your game's loop and pass it the `gamepad` object that you want to check for button presses. This will be updated to allow a single `gamepad` method to be used to check every connected gamepad for button presses.
+Future updates will add more controller support and also provide mechanisms for more easily checking for button presses. Currently, you need to call the `GamePadder.checkForButtonPress()` method in your game's loop and pass it the `gamepad` object that you want to check for button presses. This will be updated to allow a single `gamepad` method to be used to check every connected gamepad for button presses.
 
 ## Using
 
-You can use Gamepad like this:
+You can use Gamepadder like this:
 
 ```js
-import { Gamepad, GamepadUtils } from 'gamepad';
+import { Gamepadder, GamepadderUtils } from 'gamepadder';
 
 const numberOfPlayers = 1;
 
@@ -29,11 +29,11 @@ class Game {
   }
 
   pollGamepads() {
-    const gamepads = GamepadUtils.getGamepads();
+    const gamepads = GamepadderUtils.getGamepads();
 
     if(gamepads.length) {
       gamepads.forEach((pad, index) => {
-        game.controllers[index] =  new Gamepad(pad);
+        game.controllers[index] =  new Gamepadder(pad);
       });
 
       if(gamepads.length === numberOfPlayers) {
@@ -46,7 +46,7 @@ class Game {
     this.controllerConnectedEvent = window.addEventListener('gamepadconnected', (e) => {
       console.log('gamepad connected');
 
-      const controller = new Gamepad(e.gamepad);
+      const controller = new Gamepadder(e.gamepad);
 
       if(!this.controllers[controller.id]) {
         this.controllers[controller.id] = {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ##Contributing
 
-`gamepad` needs your help!
+`Gamepadder` needs your help!
 
 The more controller mappings we can generate, the better. If you have a controller or any input mapping software that you use, please head to the [HTML5 Gamepad Tester](http://html5gamepad.com/) and then fill out the template below:
 

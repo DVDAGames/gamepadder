@@ -1,8 +1,8 @@
 import typeMap from './mappings/typemap';
-import GamepadUtils from './utils/utils';
+import GamepadderUtils from './utils/utils';
 
-//Gamepad Class
-class Gamepad {
+//Gamepadder Class
+class Gamepadder {
   //generate a new gamepad object
   constructor({ index, id, buttons, axes, mapping, connected }) {
     //set default parameters for controller
@@ -38,7 +38,7 @@ class Gamepad {
 
   //get the type of controller based on the gamepad id, number of buttons, and number of axes
   setType() {
-    const test = gamepadUtils.parseControllerID(this.name);
+    const test = GamepadderUtils.parseControllerID(this.name);
 
     //use generic controller map by default
     let type = typeMap[0];
@@ -74,8 +74,8 @@ class Gamepad {
   }
 }
 
-//make the gamepad class and its utils available
+//make the gamepadder class and its utils available
 export {
-  Gamepad,
-  GamepadUtils
+  Gamepadder,
+  GamepadderUtils
 };
