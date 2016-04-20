@@ -1,6 +1,6 @@
 {
   "name": "gamepadder",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "JavaScript class for dealing with HTML 5 GamePad API",
   "main": "index.js",
   "scripts": {

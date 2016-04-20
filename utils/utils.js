@@ -3,7 +3,15 @@ const GamepadderUtils = {
   //Chrome gives you a GamepadList instead of an Array, let's fix that
   convertGamePadListToArray(gamepadList) {
     //use the Array.prototype.slice.call() trick to convert this Array-like Object into an Array
-    return [].slice.call(gamepadList);
+    let gamepadArray = [];
+
+    [].slice.call(gamepadList).forEach((pad, index) => {
+      if(pad.id) {
+        gamepadArray.push(pad);
+      }
+    });
+
+    return gamepadArray;
   },
 
   //check for connected gamepads and return them as an Array
