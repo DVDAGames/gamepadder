@@ -1,4 +1,4 @@
-#gamepadder 0.5.1
+#gamepadder 0.5.2
 
 `gamepadder` is a basic JavaScript class for dealing with the intricacies of the HTML 5 Gamepad API.
 
@@ -6,6 +6,7 @@ It currently has fully supported mappings, button naming, and controller naming 
 
 * Sony Dual Shock 4
 * Sony Dual Shock 3
+* XBox 360 Controller
 
 Future updates will add more controller support and also provide mechanisms for more easily checking for button presses. Currently, you need to call the `GamePadder.checkForButtonPress()` method in your game's loop and pass it the `gamepad` object that you want to check for button presses. This will be updated to allow a single `gamepad` method to be used to check every connected gamepad for button presses.
 

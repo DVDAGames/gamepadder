@@ -40,10 +40,12 @@ const GamepadderUtils = {
 
     const vendor = find[1];
     const product = find[2];
+    const defaultName = id;
 
     return {
       vendor,
-      product
+      product,
+      defaultName
     };
   }
 };

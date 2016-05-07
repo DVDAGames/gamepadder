@@ -44,7 +44,13 @@ class Gamepadder {
     let type = typeMap[0];
 
     typeMap.some((gamePadType) => {
-      if(gamePadType.vendor === test.vendor && gamePadType.product === test.product) {
+      //check for matching vendor and product ids
+      const vendorAndProductMatch = (gamePadType.vendor === test.vendor && gamePadType.product === test.product);
+
+      //check for matching name if no vendor and product ids are set
+      const noVendorNameMatch = (!test.vendor && !test.product && test.defaultName && gamePadType.name === test.defaultName); 
+
+      if(vendorAndProductMatch || noVendorMatch) {
         type = gamePadType;
 
         return true;
