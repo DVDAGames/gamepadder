@@ -12,6 +12,12 @@ Future updates will add more controller support and also provide mechanisms for 
 
 ## Using
 
+Install the package:
+
+```shell
+npm install @dvdagames/gamepadder
+```
+
 You can use Gamepadder like this:
 
 ```js

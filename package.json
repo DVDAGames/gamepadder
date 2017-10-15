@@ -1,5 +1,5 @@
 {
-  "name": "gamepadder",
+  "name": "@dvdagames/gamepadder",
   "version": "0.5.2",
   "description": "JavaScript class for dealing with HTML 5 GamePad API",
   "main": "index.js",
